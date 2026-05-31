@@ -26,6 +26,20 @@ See [alexnet/README.md](alexnet/README.md) for architecture details, training se
 
 ---
 
+### [Transformer](transformer/) — Vaswani et al., 2017
+
+> *Attention Is All You Need*
+
+Trained on WMT14 EN→DE. Full base model (d_model=512, 8 heads, 6 layers) with shared BPE, Noam LR schedule, label-smoothed loss, and beam-search decoding.
+
+| Notebook | Description |
+|---|---|
+| [`transformer_wmt14_ende_jax`](transformer/transformer_wmt14_ende_jax.ipynb) | Complete implementation — data pipeline, model, training, decoding & BLEU |
+
+See [transformer/README.md](transformer/README.md) for architecture details and training setup.
+
+---
+
 ## Stack
 
 All implementations use the same core stack:
@@ -44,11 +58,14 @@ All implementations use the same core stack:
 
 ```
 papers/
-└── alexnet/
+├── alexnet/
+│   ├── README.md
+│   ├── alexnet_cifar10_jax.ipynb
+│   ├── alexnet_cifar10_jax_with_sigmoid.ipynb
+│   ├── alexnet_cifar10_jax_without_dropout.ipynb
+│   ├── alexnet_cifar10_jax_optuna.ipynb
+│   └── alexnet_cifar10_jax_flexible_optuna.ipynb
+└── transformer/
     ├── README.md
-    ├── alexnet_cifar10_jax.ipynb
-    ├── alexnet_cifar10_jax_with_sigmoid.ipynb
-    ├── alexnet_cifar10_jax_without_dropout.ipynb
-    ├── alexnet_cifar10_jax_optuna.ipynb
-    └── alexnet_cifar10_jax_flexible_optuna.ipynb
+    └── transformer_wmt14_ende_jax.ipynb
 ```
